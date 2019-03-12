@@ -1,0 +1,12 @@
+﻿{
+  "AdHocScriptFolder": "scripts",
+  "StoredProcedureFolder": "procs",
+  "DefaultDatabase": "master",
+  "UseDatabaseWhitelist": false,
+  "DatabaseWhitelist": [
+    "master",
+    "tempdb"
+  ],
+  "ExportFilePathMac": "/tmp",
+  "ExportFilePathWin": "C:\\Temp"
+}

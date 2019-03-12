@@ -1,0 +1,8 @@
+﻿{
+  "ServerName": "SERVER",
+  "InstanceName": "",
+  "Port": 1433,
+  "UseTrustedConnection": true,
+  "UserId": "",
+  "Password": ""
+}
