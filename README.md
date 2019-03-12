@@ -30,15 +30,18 @@ _Note: If you want to execute any of the stored procedures, you must add a file 
 
 One file is created per database, including the master database.
 
-## Licence
-
-This project uses the MIT licence.
-
 ## Dependencies
 
 - JSON.NET (for parsing config files and SQL Server results)
 - ClosedXML (for generating the Excel output)
 - Costura.Fody (for generating a single assembly file)
+
+## Licence
+
+- This project uses the MIT licence.
+- Newtonsoft.Json is copyright (c) 2007 James Newton-King
+- ClosedXML is copyright (c) 2016 ClosedXML
+- Fody.Costura is copyright (c) 2012 Simon Cropp and contributors
 
 ## Future plans
 
