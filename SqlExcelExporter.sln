@@ -5,27 +5,35 @@ VisualStudioVersion = 15.0.28307.438
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlExcelExporter", "SqlExcelExporter\SqlExcelExporter.csproj", "{AEA5090F-E3D0-4B4F-8879-39803FB7517E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sql2xls", "sql2xls\sql2xls.csproj", "{F9810E81-145A-41AB-8E29-09A0391A49EC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sql2xls", "sql2xls\sql2xls.csproj", "{A535E2C9-BBD6-4A5B-8121-EFC2EAD3421F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+		Release.Signed|Any CPU = Release.Signed|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{AEA5090F-E3D0-4B4F-8879-39803FB7517E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AEA5090F-E3D0-4B4F-8879-39803FB7517E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AEA5090F-E3D0-4B4F-8879-39803FB7517E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AEA5090F-E3D0-4B4F-8879-39803FB7517E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F9810E81-145A-41AB-8E29-09A0391A49EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F9810E81-145A-41AB-8E29-09A0391A49EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F9810E81-145A-41AB-8E29-09A0391A49EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F9810E81-145A-41AB-8E29-09A0391A49EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEA5090F-E3D0-4B4F-8879-39803FB7517E}.Release.Signed|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEA5090F-E3D0-4B4F-8879-39803FB7517E}.Release.Signed|Any CPU.Build.0 = Debug|Any CPU
+		{A535E2C9-BBD6-4A5B-8121-EFC2EAD3421F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A535E2C9-BBD6-4A5B-8121-EFC2EAD3421F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A535E2C9-BBD6-4A5B-8121-EFC2EAD3421F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A535E2C9-BBD6-4A5B-8121-EFC2EAD3421F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A535E2C9-BBD6-4A5B-8121-EFC2EAD3421F}.Release.Signed|Any CPU.ActiveCfg = Debug|Any CPU
+		{A535E2C9-BBD6-4A5B-8121-EFC2EAD3421F}.Release.Signed|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {572476B2-2733-4C56-A819-781BBA25E28F}
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		version = 0.2
 	EndGlobalSection
 EndGlobal

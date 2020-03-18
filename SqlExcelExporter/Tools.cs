@@ -1,5 +1,5 @@
 ﻿using System.IO;
-using Newtonsoft.Json;
+using System.Text.Json;
 
 namespace SqlExcelExporter
 {
@@ -19,10 +19,7 @@ namespace SqlExcelExporter
                 return default(T);
             }
 
-            var deserialiser = new JsonSerializer();
-
-            var reader = new JsonTextReader(new StreamReader(file.FullName));
-            return deserialiser.Deserialize<T>(reader);
+            return JsonSerializer.Deserialize<T>(File.ReadAllText(file.FullName));
         }
 
         /// <summary>

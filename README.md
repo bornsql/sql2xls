@@ -2,14 +2,14 @@
 
 Imagine being able to export the results of a T-SQL query straight into an Excel file. Imagine being able to export the results of an unlimited number of scripts at one time.
 
-Well now you can with my free tool sql2xls. The first beta v0.0.1 is available for download from this link. You can export the results of one or more scripts into an Excel file per instance or database.
+Well now you can with my free tool *sql2xls*. The latest beta v0.2.0 is available for download from this link. You can export the results of one or more scripts into an Excel file per instance or database.
 
-Currently only a .NET Framework 4.7.2 executable exists. In the near future, there will be versions for .NET Core as well.
+The latest version runs on .NET Core 3.1. It has been tested on Windows 10 and macOS Catalina.
 
 ## Requirements
 
-- 7-Zip to unpack the compressed file
-- .NET Framework 4.7.2 to run the executable
+- .NET Core 3.1 SDK to compile and run the executable.
+- `mono-libgdiplus` for macOS, or `libgdiplus` for Linux.
 
 ## Configuration
 
@@ -32,20 +32,16 @@ One file is created per database, including the master database.
 
 ## Dependencies
 
-- JSON.NET (for parsing config files and SQL Server results)
 - ClosedXML (for generating the Excel output)
-- Costura.Fody (for generating a single assembly file)
+- Microsoft.Data.SqlClient (for connecting to SQL Server)
 
 ## Licence
 
 - This project uses the MIT licence.
-- Newtonsoft.Json is copyright (c) 2007 James Newton-King
-- ClosedXML is copyright (c) 2016 ClosedXML
-- Fody.Costura is copyright (c) 2012 Simon Cropp and contributors
+- ClosedXML is copyright (c) 2017 ClosedXML
 
 ## Future plans
 
-- Cross-platform (Windows, macOS, Linux)
 - JSON export
 - SQL Server Management Studio plugin
 

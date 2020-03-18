@@ -18,9 +18,7 @@ namespace SqlExcelExporter
             Json
         }
 
-        private const string PathName = @"C:\Temp";
-
-        private List<ResultEntity> m_diagnosticResults;
+        private readonly List<ResultEntity> m_diagnosticResults;
 
         public List<FileInfo> ProduceExcel()
         {

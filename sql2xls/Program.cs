@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using Newtonsoft.Json;
 using SqlExcelExporter;
 
 namespace SqlToExcelExporter
@@ -13,7 +12,7 @@ namespace SqlToExcelExporter
 
         private static void Main()
         {
-            Console.WriteLine("--- SQL to Excel Exporter v0.0.1");
+            Console.WriteLine("--- SQL to Excel Exporter v0.2.0");
             Console.WriteLine("--- Copyright (c) Born SQL");
             Console.WriteLine("--- Written by Randolph West and other contributors. https://bornsql.ca/.");
             Console.WriteLine();
@@ -28,9 +27,9 @@ namespace SqlToExcelExporter
             {
                 m_connectionSettings = Tools.ReadJsonItem<ConnectionEntity>(new FileInfo("connection.json"));
             }
-            catch (JsonReaderException ex)
+            catch (Exception ex)
             {
-                error = ex.Path;
+                error = ex.Message;
                 errorConnection = true;
                 Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] *** ERROR *** An error occurred validating the connection.json file [{error}].");
             }
@@ -39,9 +38,9 @@ namespace SqlToExcelExporter
             {
                 m_config = Tools.ReadJsonItem<ConfigurationEntity>(new FileInfo(Path.Combine(path, "config.json")));
             }
-            catch (JsonReaderException ex)
+            catch (Exception ex)
             {
-                error = ex.Path;
+                error = ex.Message;
                 errorDiagnostics = true;
                 Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] *** ERROR *** An error occurred validating the config.json file [{error}].");
             }
