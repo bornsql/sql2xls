@@ -1,4 +1,4 @@
-﻿namespace SqlExcelExporter
+﻿namespace SqlExcelExporter.Entities
 {
     /// <summary>
     /// Container for configuration settings from the config.json file

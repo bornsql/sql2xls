@@ -1,1 +1,1 @@
-﻿exec sp_Blitz
+﻿exec sp_Blitz;

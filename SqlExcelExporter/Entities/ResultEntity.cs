@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data;
 
-namespace SqlExcelExporter
+namespace SqlExcelExporter.Entities
 {
     /// <summary>
     /// Container for results from one or more queries against SQL Server

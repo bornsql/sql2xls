@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using SqlExcelExporter;
+using SqlExcelExporter.Entities;
 
 namespace SqlToExcelExporter
 {
@@ -12,7 +13,7 @@ namespace SqlToExcelExporter
 
         private static void Main()
         {
-            Console.WriteLine("--- SQL to Excel Exporter v0.2.0");
+            Console.WriteLine("--- SQL to Excel Exporter v0.2.1");
             Console.WriteLine("--- Copyright (c) Born SQL");
             Console.WriteLine("--- Written by Randolph West and other contributors. https://bornsql.ca/.");
             Console.WriteLine();

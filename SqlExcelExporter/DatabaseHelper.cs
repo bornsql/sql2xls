@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using Microsoft.Data.SqlClient;
 using System.Diagnostics;
 using System.IO;
 using System.Net.Sockets;
 using System.Text;
+using Microsoft.Data.SqlClient;
+using SqlExcelExporter.Entities;
 
 namespace SqlExcelExporter
 {

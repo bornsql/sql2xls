@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using ClosedXML.Excel;
+using SqlExcelExporter.Entities;
 
 namespace SqlExcelExporter
 {

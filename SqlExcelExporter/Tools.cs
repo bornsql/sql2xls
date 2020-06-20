@@ -16,7 +16,7 @@ namespace SqlExcelExporter
         {
             if (!File.Exists(file.FullName))
             {
-                return default(T);
+                return default;
             }
 
             return JsonSerializer.Deserialize<T>(File.ReadAllText(file.FullName));
@@ -26,9 +26,6 @@ namespace SqlExcelExporter
         /// Checks if assembly is running on Windows
         /// </summary>
         /// <returns>True or false</returns>
-        public static bool IsWindows()
-        {
-            return Path.DirectorySeparatorChar.Equals('\\');
-        }
+        public static bool IsWindows() => Path.DirectorySeparatorChar.Equals('\\');
     }
 }
