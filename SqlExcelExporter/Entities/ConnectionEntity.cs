@@ -8,7 +8,7 @@
         /// <summary>
         /// Generates a data source string based on instance and port settings.
         /// </summary>
-        public string DataSource => !string.IsNullOrEmpty(InstanceName)
+        private string DataSource => !string.IsNullOrEmpty(InstanceName)
             ? $"{ServerName}\\{InstanceName}"
             : (Port != 1433 ? $"{ServerName},{Port}" : $"{ServerName}");
 

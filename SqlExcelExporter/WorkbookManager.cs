@@ -39,15 +39,12 @@ namespace SqlExcelExporter
             }
         }
 
-        private static string RemoveSpecialCharacters(String str)
+        private static string RemoveSpecialCharacters(string str)
         {
             var sb = new StringBuilder();
-            foreach (var c in str)
+            foreach (var c in str.Where(c => char.IsLetterOrDigit(c) || c == '.' || c == '_'))
             {
-                if (char.IsLetterOrDigit(c) || c == '.' || c == '_')
-                {
-                    sb.Append(c);
-                }
+                sb.Append(c);
             }
             return sb.ToString();
         }
@@ -56,7 +53,7 @@ namespace SqlExcelExporter
         {
             var w = RemoveSpecialCharacters(workbook).Trim();
 
-            return w.Length > 31 ? w.Substring(0, 31) : w;
+            return w.Length > 31 ? w[..31] : w;
         }
 
         public FileInfo PrepareInstanceWorkbook()
@@ -77,10 +74,10 @@ namespace SqlExcelExporter
                 {
                     var s = ctr.ToString().Trim();
 
-                    worksheetName = worksheetName + s;
+                    worksheetName += s;
                     if (worksheetName.Length > 31)
                     {
-                        worksheetName = worksheetName.Substring(0, 31 - s.Length) + s;
+                        worksheetName = worksheetName[..(31 - s.Length)] + s;
                     }
                 }
 
@@ -97,10 +94,10 @@ namespace SqlExcelExporter
                     {
                         for (var c = 0; c < dr.Results.Columns.Count; c++)
                         {
-                            var cellValue = dr.Results.Rows[r][c].ToString().Trim();
-                            if (cellValue.Length > 32767)
+                            var cellValue = dr.Results.Rows[r][c].ToString()?.Trim();
+                            if (cellValue != null && cellValue.Length > 32767)
                             {
-                                cellValue = cellValue.Substring(0, 32767);
+                                cellValue = cellValue[..32767];
                             }
 
                             worksheet.Cell(r + 2, c + 1).Value = cellValue;
@@ -138,24 +135,6 @@ namespace SqlExcelExporter
             return filename;
         }
 
-        public List<FileInfo> PrepareDatabaseWorkbooks(ConfigurationEntity config)
-        {
-            var xls = new List<FileInfo>();
-
-            foreach (var database in m_databaseResults)
-            {
-                // Create a new file per database
-                var workbook = PrepareExcel(database.Value, config);
-
-                if (workbook != null)
-                {
-                    xls.Add(workbook);
-                }
-            }
-
-            return xls;
-        }
-
         public FileInfo PrepareExcel(List<ResultEntity> results, ConfigurationEntity config)
         {
             var database = results.First().Database;
@@ -185,10 +164,10 @@ namespace SqlExcelExporter
                 {
                     var s = ctr.ToString().Trim();
 
-                    worksheetName = worksheetName + s;
+                    worksheetName += s;
                     if (worksheetName.Length > 31)
                     {
-                        worksheetName = worksheetName.Substring(0, 31 - s.Length) + s;
+                        worksheetName = worksheetName[..(31 - s.Length)] + s;
                     }
                 }
 
@@ -205,10 +184,10 @@ namespace SqlExcelExporter
                     {
                         for (var c = 0; c < dr.Results.Columns.Count; c++)
                         {
-                            var cellValue = dr.Results.Rows[r][c].ToString().Trim();
+                            var cellValue = dr.Results.Rows[r][c].ToString()?.Trim();
                             if (cellValue.Length > 32767)
                             {
-                                cellValue = cellValue.Substring(0, 32767);
+                                cellValue = cellValue[..32767];
                             }
 
                             worksheet.Cell(r + 2, c + 1).Value = cellValue;

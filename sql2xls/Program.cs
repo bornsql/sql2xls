@@ -13,7 +13,7 @@ namespace SqlToExcelExporter
 
         private static void Main()
         {
-            Console.WriteLine("--- SQL to Excel Exporter v0.2.1");
+            Console.WriteLine("--- SQL to Excel Exporter v0.2.2");
             Console.WriteLine("--- Copyright (c) Born SQL");
             Console.WriteLine("--- Written by Randolph West and other contributors. https://bornsql.ca/.");
             Console.WriteLine();
@@ -99,8 +99,7 @@ namespace SqlToExcelExporter
             var mgr = new WorkbookManager(results);
             var f = mgr.PrepareExcel(results, m_config);
 
-            Console.WriteLine(
-                $"Excel file [{f.Name}] generated in folder [{(Tools.IsWindows() ? m_config.ExportFilePathWin : m_config.ExportFilePathMac)}].");
+            Console.WriteLine($"Excel file [{f.Name}] generated in folder [{(Tools.IsWindows() ? m_config.ExportFilePathWin : m_config.ExportFilePathMac)}].");
 
             Console.WriteLine("Press any key to exit.");
             Console.ReadKey();
