@@ -63,14 +63,14 @@ namespace SqlExcelExporter
             {
                 try
                 {
+                    var sqlBatch = string.Empty;
+                    var cmd = new SqlCommand(string.Empty, cn);
+                    cn.Open();
+
                     if (!database.Equals("master", StringComparison.InvariantCultureIgnoreCase))
                     {
                         cn.ChangeDatabase(database);
                     }
-
-                    var sqlBatch = string.Empty;
-                    var cmd = new SqlCommand(string.Empty, cn);
-                    cn.Open();
 
                     script += $"{Environment.NewLine}GO"; // make sure last batch is executed.
 
@@ -183,17 +183,11 @@ namespace SqlExcelExporter
         /// <summary>
         /// Runs a single ad hoc script against a target database
         /// </summary>
+        /// <param name="connectionString">The connection string</param>
         /// <param name="database">The target database</param>
         /// <param name="scriptName">The name of the script for the Excel worksheet</param>
         /// <param name="script">The script file</param>
-        /// <returns>A result that will be parsed by the file writer</returns>
-        public ResultEntity RunScript(string database, string scriptName, FileInfo script)
-        {
-            return File.Exists(script.FullName)
-                ? RunScript(m_connEntity.ToString(), database, scriptName, File.ReadAllText(script.FullName))
-                : null;
-        }
-
+        /// <returns></returns>
         private ResultEntity RunScript(string connectionString, string database, string scriptName, string script)
         {
             var results = new ResultEntity

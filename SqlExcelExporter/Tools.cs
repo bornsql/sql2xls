@@ -14,12 +14,9 @@ namespace SqlExcelExporter
         /// <returns>The object as type T</returns>
         public static T ReadJsonItem<T>(FileInfo file)
         {
-            if (!File.Exists(file.FullName))
-            {
-                return default;
-            }
-
-            return JsonSerializer.Deserialize<T>(File.ReadAllText(file.FullName));
+            return !File.Exists(file.FullName)
+                ? default
+                : JsonSerializer.Deserialize<T>(File.ReadAllText(file.FullName));
         }
 
         /// <summary>
