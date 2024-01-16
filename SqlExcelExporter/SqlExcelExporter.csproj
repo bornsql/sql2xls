@@ -5,7 +5,7 @@
         <ReleaseVersion>0.2</ReleaseVersion>
     </PropertyGroup>
     <ItemGroup>
-        <PackageReference Include="Microsoft.Data.SqlClient" Version="3.0.1" />
+        <PackageReference Include="Microsoft.Data.SqlClient" Version="3.1.5" />
         <PackageReference Include="ClosedXML" Version="0.95.4" />
     </ItemGroup>
     <ItemGroup>
